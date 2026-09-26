@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-08-19T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="context-dfd-1" name="Context-Free DFD">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title1" value="Fig. 6.2: Context-Free Diagram of Supply Chain Digital Passport &amp; Counterfeit Detection System" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="0" width="880" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Central Process (Level 0) -->
+        <mxCell id="proc0" value="0&#10;Supply Chain Digital Passport &amp;&#10;Counterfeit Detection System" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="560" y="380" width="260" height="220" as="geometry" />
+        </mxCell>
+
+        <!-- External Entities -->
+        <mxCell id="ent_mfg" value="Manufacturer" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_admin" value="System Administrator" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="500" y="60" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_logi" value="Logistics Provider" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="60" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_gov" value="Government / Regulator" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_ware" value="Warehouse" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="380" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_customs" value="Customs Authority" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="740" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_retail" value="Retailer" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="740" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_cust" value="Customer" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="580" y="880" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ DATA FLOWS ============ -->
+
+        <!-- Manufacturer -->
+        <mxCell id="f1" value="Product / Batch Registration Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.15;" edge="1" parent="1" source="ent_mfg" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="Digital Passport / Confirmation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0;exitY=0.3;entryX=1;entryY=0.5;" edge="1" parent="1" source="proc0" target="ent_mfg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- System Administrator -->
+        <mxCell id="f3" value="User / Role Management Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.4;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="ent_admin" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" value="System Logs / Audit Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.6;exitY=0;entryX=0.7;entryY=1;" edge="1" parent="1" source="proc0" target="ent_admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Logistics Provider -->
+        <mxCell id="f5" value="Shipment / Transport Event Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.15;" edge="1" parent="1" source="ent_logi" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" value="Acknowledgment / Status Update" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.3;entryX=0;entryY=0.5;" edge="1" parent="1" source="proc0" target="ent_logi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Warehouse -->
+        <mxCell id="f7" value="Receipt / Dispatch Event Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.3;" edge="1" parent="1" source="ent_ware" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f8" value="Confirmation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.7;entryX=0;entryY=0.7;" edge="1" parent="1" source="proc0" target="ent_ware">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Retailer -->
+        <mxCell id="f9" value="Sale / Transfer / Verification Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=1;entryY=0.85;" edge="1" parent="1" source="ent_retail" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f10" value="Verification Result" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.85;entryX=0.7;entryY=0;" edge="1" parent="1" source="proc0" target="ent_retail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Customer -->
+        <mxCell id="f11" value="QR / NFC Scan Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.4;exitY=0;entryX=0.35;entryY=1;" edge="1" parent="1" source="ent_cust" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f12" value="Authentication Result" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.65;exitY=1;entryX=0.6;entryY=0;" edge="1" parent="1" source="proc0" target="ent_cust">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Customs Authority -->
+        <mxCell id="f13" value="Origin / Movement Verification Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.4;entryX=0;entryY=0.85;" edge="1" parent="1" source="ent_customs" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f14" value="Product Origin / Movement Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0;exitY=0.7;entryX=1;entryY=0.6;" edge="1" parent="1" source="proc0" target="ent_customs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Government / Regulator -->
+        <mxCell id="f15" value="Compliance Query / Investigation Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.3;entryX=0;entryY=0.7;" edge="1" parent="1" source="ent_gov" target="proc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f16" value="Compliance Reports / Alerts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0;exitY=0.4;entryX=1;entryY=0.5;" edge="1" parent="1" source="proc0" target="ent_gov">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-08-19T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="er-diagram-1" name="ER Diagram">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title1" value="Fig. 6.1: ER Diagram for Supply Chain Digital Passport &amp; Counterfeit Detection System" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="0" width="820" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ============ ENTITIES ============ -->
+        <mxCell id="e_org" value="&lt;b&gt;Organization&lt;/b&gt;&lt;hr&gt;&lt;i&gt;OrgID (PK)&lt;/i&gt;&lt;br&gt;Name&lt;br&gt;Type (Manufacturer/Logistics/&lt;br&gt;Retailer/Customs)&lt;br&gt;Address&lt;br&gt;VerifiedStatus" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_user" value="&lt;b&gt;User&lt;/b&gt;&lt;hr&gt;&lt;i&gt;UserID (PK)&lt;/i&gt;&lt;br&gt;Name&lt;br&gt;Email&lt;br&gt;PasswordHash&lt;br&gt;Role&lt;br&gt;OrgID (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="60" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_audit" value="&lt;b&gt;AuditLog&lt;/b&gt;&lt;hr&gt;&lt;i&gt;LogID (PK)&lt;/i&gt;&lt;br&gt;UserID (FK)&lt;br&gt;Action&lt;br&gt;Timestamp&lt;br&gt;Details" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="600" y="60" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_warehouse" value="&lt;b&gt;Warehouse&lt;/b&gt;&lt;hr&gt;&lt;i&gt;WarehouseID (PK)&lt;/i&gt;&lt;br&gt;Name&lt;br&gt;Location&lt;br&gt;OrgID (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="60" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_batch" value="&lt;b&gt;ProductBatch&lt;/b&gt;&lt;hr&gt;&lt;i&gt;BatchID (PK)&lt;/i&gt;&lt;br&gt;BatchNumber&lt;br&gt;ManufactureDate&lt;br&gt;Quantity" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_product" value="&lt;b&gt;Product&lt;/b&gt;&lt;hr&gt;&lt;i&gt;ProductID (PK)&lt;/i&gt;&lt;br&gt;Name&lt;br&gt;SKU&lt;br&gt;BatchID (FK)&lt;br&gt;ManufacturerOrgID (FK)&lt;br&gt;Status" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="320" y="260" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_passport" value="&lt;b&gt;DigitalPassport&lt;/b&gt;&lt;hr&gt;&lt;i&gt;PassportID (PK)&lt;/i&gt;&lt;br&gt;ProductID (FK)&lt;br&gt;QRCode&lt;br&gt;NFCID&lt;br&gt;CreatedDate&lt;br&gt;Status" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="600" y="260" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_retailer" value="&lt;b&gt;Retailer&lt;/b&gt;&lt;hr&gt;&lt;i&gt;RetailerID (PK)&lt;/i&gt;&lt;br&gt;Name&lt;br&gt;Location&lt;br&gt;OrgID (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="260" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_event" value="&lt;b&gt;SupplyChainEvent&lt;/b&gt;&lt;hr&gt;&lt;i&gt;EventID (PK)&lt;/i&gt;&lt;br&gt;ProductID (FK)&lt;br&gt;UserID (FK)&lt;br&gt;EventType&lt;br&gt;Location&lt;br&gt;Timestamp" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_shipment" value="&lt;b&gt;Shipment&lt;/b&gt;&lt;hr&gt;&lt;i&gt;ShipmentID (PK)&lt;/i&gt;&lt;br&gt;ProductID (FK)&lt;br&gt;LogisticsOrgID (FK)&lt;br&gt;Origin&lt;br&gt;Destination&lt;br&gt;Status" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="460" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_scan" value="&lt;b&gt;VerificationScan&lt;/b&gt;&lt;hr&gt;&lt;i&gt;ScanID (PK)&lt;/i&gt;&lt;br&gt;PassportID (FK)&lt;br&gt;CustomerID (FK)&lt;br&gt;Timestamp&lt;br&gt;Result" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="600" y="460" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_customer" value="&lt;b&gt;Customer&lt;/b&gt;&lt;hr&gt;&lt;i&gt;CustomerID (PK)&lt;/i&gt;&lt;br&gt;Name&lt;br&gt;ContactInfo" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="460" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_recall" value="&lt;b&gt;Recall&lt;/b&gt;&lt;hr&gt;&lt;i&gt;RecallID (PK)&lt;/i&gt;&lt;br&gt;BatchID (FK)&lt;br&gt;InitiatedByUserID (FK)&lt;br&gt;Reason&lt;br&gt;Date&lt;br&gt;Status" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="660" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_alert" value="&lt;b&gt;Alert&lt;/b&gt;&lt;hr&gt;&lt;i&gt;AlertID (PK)&lt;/i&gt;&lt;br&gt;EventID (FK)&lt;br&gt;Type&lt;br&gt;Severity&lt;br&gt;Timestamp&lt;br&gt;Status" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="320" y="660" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ============ RELATIONSHIPS ============ -->
+        <mxCell id="r1" value="employs (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_org" target="e_user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r2" value="registers (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=0.5;exitY=1;entryX=0;entryY=0.3;" edge="1" parent="1" source="e_org" target="e_product">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r3" value="operates (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_org" target="e_warehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r4" value="operates (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=1;exitY=0.7;entryX=1;entryY=0;" edge="1" parent="1" source="e_org" target="e_retailer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r5" value="handles (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=0.5;exitY=1;entryX=0;entryY=0;" edge="1" parent="1" source="e_org" target="e_shipment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r6" value="contains (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_batch" target="e_product">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r7" value="has (1:1)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_product" target="e_passport">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r8" value="generates (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_product" target="e_event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r9" value="records (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=0;exitY=0.5;entryX=1;entryY=0.2;" edge="1" parent="1" source="e_user" target="e_event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r10" value="included in (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_product" target="e_shipment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r11" value="logs (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=0;exitY=0.7;entryX=1;entryY=0.5;" edge="1" parent="1" source="e_warehouse" target="e_event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r12" value="logs (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=1;exitY=0.7;entryX=1;entryY=0.5;" edge="1" parent="1" source="e_retailer" target="e_event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r13" value="scanned in (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_passport" target="e_scan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r14" value="performs (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_customer" target="e_scan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r15" value="subject to (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_batch" target="e_recall">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r16" value="triggers (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;" edge="1" parent="1" source="e_event" target="e_alert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r17" value="generates (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=1;exitY=0.3;entryX=0.5;entryY=0;" edge="1" parent="1" source="e_user" target="e_audit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r18" value="initiates (1:N)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;endArrow=none;startArrow=none;exitX=0;exitY=0.8;entryX=0.5;entryY=1;" edge="1" parent="1" source="e_user" target="e_recall">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
